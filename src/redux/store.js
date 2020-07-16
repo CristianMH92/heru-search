@@ -1,6 +1,7 @@
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
 //thunk serve to create pomises with redux
 import thunk from 'redux-thunk'
+import reduxSaga from 'redux-saga'
 import giphyReducer from './giphyDucks'
 
 const rootReducer = combineReducers ({
