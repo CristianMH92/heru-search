@@ -21,7 +21,8 @@ export const  getGifsAction =  () =>
     //getState will get to inital data or the information stored in the state
    async  (dispatch, getState) => {
        try {
-           const res = await axios.get('https://api.giphy.com/v1/gifs/search?&api_key=AUfMW8slOkzJFnZQvYMglqs0osrUvBOb&q=rainbow')
+           const res = await axios.get('https://api.giphy.com/v1/stickers/trending?api_key=AUfMW8slOkzJFnZQvYMglqs0osrUvBOb&limit=25&rating=g')
+            //const res = await axios.get('https://api.giphy.com/v1/gifs/search?&api_key=AUfMW8slOkzJFnZQvYMglqs0osrUvBOb&q=rainbow')
            dispatch ({
                type: GET_GIFS_SUCCESS,
                payload: res.data.data
