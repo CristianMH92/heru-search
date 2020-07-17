@@ -23,7 +23,7 @@ export default function Home () {
                                 height={150}
                                 className="mr-5"
                                 src={search.featured_gif.images.original.url}
-                                alt="Generic placeholder"
+                                alt="Image Gif"
                             />
                         ))
                     }
