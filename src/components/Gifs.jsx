@@ -14,14 +14,14 @@ export default function Gifs () {
 
     return (
         <div>
-           
+            
             <Container fluid="md">
             <h1>Top Gifs</h1>
                 <Row>
                     <Col>
                     {
                         gifs.map(gif=>(
-                            <img
+                            <Image
                                 key={ gif.id }
                                 width={150}
                                 height={150}

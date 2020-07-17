@@ -1,6 +1,7 @@
 import React from 'react';
-import Nav from './components/Nav/Nav'
+import Nav from './components/Nav'
 import Searcher from './components/Searcher'
+import Home from'./components/Home'
 import Result from './components/Result'
 import { Container, Row, Col } from 'react-bootstrap'
 import LogoGiphy from './assets/img/logo.png'
@@ -9,9 +10,7 @@ import  { Provider } from 'react-redux'
 import generateStore from './redux/store'
 import { 
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Switch
 } from 'react-router-dom'
 function App() {
    const store = generateStore()
@@ -31,10 +30,19 @@ function App() {
             </Col>
          </Row>
       </Container>
-      <Searcher />
+      <Provider store={ store }>
+         <Searcher />
+      </Provider>
       <Switch>
-       <Router path="/" exact>
-            <Result/>
+      <Router path="/" exact>
+         <Provider store={ store }>
+               <Home/>
+            </Provider>
+        </Router>
+       <Router path="/search">
+         <Provider store={ store }>
+              <Result/>
+         </Provider>
         </Router>
         <Router path="/top">
           <Provider store={ store }>
